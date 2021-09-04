@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:fit_shortcuts/components/subject_tile.dart';
 import 'package:fit_shortcuts/constants/constants.dart';
+import 'package:fit_shortcuts/dialog/info_dialog.dart';
 import 'package:fit_shortcuts/models/models.dart';
 import 'package:fit_shortcuts/screens/hidden_subject_screen.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,15 @@ class _MainScreenState extends State<MainScreen> {
           return Scaffold(
             appBar: AppBar(
               title: Text("Shortcuts"),
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 30.0),
+                  child: IconButton(
+                    onPressed: _onPressedInfo,
+                    icon: Icon(Icons.info),
+                  ),
+                ),
+              ],
             ),
             body: ListView(
               padding: kDefaultPadding,
@@ -99,6 +109,17 @@ class _MainScreenState extends State<MainScreen> {
       sharedPreferences.setStringList(
           SharedPreferencesConstants.hiddenSubject, hiddenSubject);
     });
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('${subject.name} archived')));
+  }
+
+  void _onPressedInfo() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return InfoDialog();
+      },
+    );
   }
 }
 

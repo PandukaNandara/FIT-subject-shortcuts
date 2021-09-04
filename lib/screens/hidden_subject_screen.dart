@@ -55,5 +55,6 @@ class _HiddenSubjectScreenState extends State<HiddenSubjectScreen> {
       sharedPreferences.setStringList(
           SharedPreferencesConstants.hiddenSubject, hiddenSubject);
     });
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${subject.name} unarchived')));
   }
 }

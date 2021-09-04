@@ -2,7 +2,6 @@ import 'package:fit_shortcuts/constants/constants.dart';
 import 'package:fit_shortcuts/models/models.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SubjectTile extends StatelessWidget {
