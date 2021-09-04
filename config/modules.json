@@ -1,0 +1,96 @@
+{
+  "3": {
+    "1": [
+      {
+        "code": "CM 3320",
+        "name": "Logic Programming & Artificial Cognitive Systems",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1997"
+      },
+      {
+        "code": "CM 3310",
+        "name": "Artificial Intelligence",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1996"
+      },
+      {
+        "code": "CM 3120",
+        "name": "Computational Statistics",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1995"
+      },
+      {
+        "code": "CM 3210",
+        "name": "Automata Theory",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1994"
+      },
+      {
+        "code": "CM 3110",
+        "name": "Computational Mathematics",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1993"
+      },
+      {
+        "code": "CM 3330",
+        "name": "Fundamentals of Bio informatics",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1992"
+      },
+      {
+        "code": "IS 3430",
+        "name": "IT Project Management",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1985"
+      },
+      {
+        "code": "IS 3100",
+        "name": "Organizational Behavior",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1984"
+      },
+      {
+        "code": "IS 3400",
+        "name": "Management Information Systems",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1983"
+      },
+      {
+        "code": "IS 4310",
+        "name": "Business Studies",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1982"
+      },
+      {
+        "code": "IS 4420",
+        "name": "Decision Management",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1981"
+      },
+      {
+        "code": "IS 4320",
+        "name": "eBusiness Management",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1980"
+      },
+      {
+        "code": "IS 3010",
+        "name": "Communication Skills",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1979"
+      },
+      {
+        "code": "IN 4500",
+        "name": "Mobile & Wireless Networks",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1990"
+      },
+      {
+        "code": "IN 3100",
+        "name": "Enterprise Applications Development",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1989"
+      },
+      {
+        "code": "IN 4110",
+        "name": "Network Programming",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1988"
+      },
+      {
+        "code": "IN 3400",
+        "name": "Advanced Database Management Systems",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1987"
+      },
+      {
+        "code": "IN 3900",
+        "name": "Independent Study",
+        "url": "https://moodle.itfac.uom.lk/course/view.php?id=1986"
+      }
+    ]
+  }
+}
