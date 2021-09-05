@@ -27,6 +27,7 @@ class _HiddenSubjectScreenState extends State<HiddenSubjectScreen> {
       ),
       body: subjects.length > 0
           ? ListView(
+              padding: kDefaultPadding,
               children: (subjects).map(
                 (e) {
                   final subject = widget.configModule.getSubject(e);
@@ -55,6 +56,7 @@ class _HiddenSubjectScreenState extends State<HiddenSubjectScreen> {
       sharedPreferences.setStringList(
           SharedPreferencesConstants.hiddenSubject, hiddenSubject);
     });
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('${subject.name} unarchived')));
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text('${subject.name} unarchived')));
   }
 }

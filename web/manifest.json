@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Shortcut for moodle subjects. Install PWA for offline use",
+    "description": "Shortcuts for FIT Moodle subjects. Install PWA for offline use",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
