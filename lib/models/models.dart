@@ -45,10 +45,12 @@ class Subject {
   final String code;
   final String name;
   final String url;
-
-  const Subject(this.code, this.name, this.url);
+  final SubjectMode mode;
+  const Subject(this.code, this.name, this.url, this.mode);
 
   factory Subject.fromJson(Map<String, dynamic> json) =>
       _$SubjectFromJson(json);
   Map<String, dynamic> toJson() => _$SubjectToJson(this);
 }
+
+enum SubjectMode { E, C }

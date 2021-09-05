@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
           return Scaffold(body: Center(child: Text(snapshot.error.toString())));
         }
         if (!snapshot.hasData) {
-          return Scaffold(body: Center(child: CircularProgressIndicator()));
+          return Scaffold();
         } else {
           final data = snapshot.data!.module;
           final sharedPreferences = snapshot.data!.sharedPreferences;
@@ -84,8 +84,14 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Future<TempHolder> _loadModules() async {
-    final json = await rootBundle.loadString('config/modules.json');
-    final config = ConfigModule.fromJson(jsonDecode(json));
+    final config = await PlatformAssetBundle().loadStructuredData(
+      'config/modules.json',
+      (json) async => ConfigModule.fromJson(
+        jsonDecode(json),
+      ),
+    );
+    // final json = await PlatformAssetBundle().loadString();
+    // final config = ;
     return TempHolder(config, await SharedPreferences.getInstance());
   }
 

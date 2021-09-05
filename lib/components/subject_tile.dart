@@ -17,11 +17,16 @@ class SubjectTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mode = subject.mode;
     return ListTile(
+      leading: CircleAvatar(
+        child: Text(mode == SubjectMode.C ? "C" : "E"),
+        backgroundColor: mode == SubjectMode.C ? Colors.blue[400] : Colors.orange[400],
+      ),
       title: Text(subject.name),
       subtitle: Text(subject.code),
       trailing: IconButton(
-        icon: Icon(!isArchived? Icons.archive: Icons.unarchive),
+        icon: Icon(!isArchived ? Icons.archive : Icons.unarchive),
         tooltip: 'Archive',
         onPressed: _onPressArchive,
       ),

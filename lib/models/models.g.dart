@@ -38,6 +38,7 @@ Subject _$SubjectFromJson(Map<String, dynamic> json) {
     json['code'] as String,
     json['name'] as String,
     json['url'] as String,
+    _$enumDecode(_$SubjectModeEnumMap, json['mode']),
   );
 }
 
@@ -45,4 +46,36 @@ Map<String, dynamic> _$SubjectToJson(Subject instance) => <String, dynamic>{
       'code': instance.code,
       'name': instance.name,
       'url': instance.url,
+      'mode': _$SubjectModeEnumMap[instance.mode],
     };
+
+K _$enumDecode<K, V>(
+  Map<K, V> enumValues,
+  Object? source, {
+  K? unknownValue,
+}) {
+  if (source == null) {
+    throw ArgumentError(
+      'A value must be provided. Supported values: '
+      '${enumValues.values.join(', ')}',
+    );
+  }
+
+  return enumValues.entries.singleWhere(
+    (e) => e.value == source,
+    orElse: () {
+      if (unknownValue == null) {
+        throw ArgumentError(
+          '`$source` is not one of the supported values: '
+          '${enumValues.values.join(', ')}',
+        );
+      }
+      return MapEntry(unknownValue, enumValues.values.first);
+    },
+  ).key;
+}
+
+const _$SubjectModeEnumMap = {
+  SubjectMode.E: 'E',
+  SubjectMode.C: 'C',
+};

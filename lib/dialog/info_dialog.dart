@@ -13,34 +13,38 @@ class InfoDialog extends StatelessWidget {
     return AlertDialog(
       title: Text("About this site"),
       actionsPadding: kDefaultPadding,
-      content: RichText(
-        text: TextSpan(
-          children: [
-            TextSpan(
-              style: bodyTextStyle,
-              text:
-                  'This site is made possible by Flutter. If you want to contribute to this project, fork ',
-            ),
-            TextSpan(
-              style: bodyTextStyle.copyWith(
-                color: Colors.blue,
+      content: Container(
+        constraints: BoxConstraints(maxWidth: 300.0),
+        child: RichText(
+          
+          text: TextSpan(
+            children: [
+              TextSpan(
+                style: bodyTextStyle,
+                text:
+                    'This site is made possible by Flutter. If you want to contribute to this project, fork ',
               ),
-              text: 'this ',
-              recognizer: TapGestureRecognizer()
-                ..onTap = () async {
-                  final url =
-                      'https://github.com/PandukaNandara/FIT-subject-shortcuts';
-                  await launch(
-                    url,
-                    forceSafariVC: false,
-                  );
-                },
-            ),
-            TextSpan(
-              style: bodyTextStyle,
-              text: 'Github repository and create a pull request with your changes.',
-            ),
-          ],
+              TextSpan(
+                style: bodyTextStyle.copyWith(
+                  color: Colors.blue,
+                ),
+                text: 'this ',
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () async {
+                    final url =
+                        'https://github.com/PandukaNandara/FIT-subject-shortcuts';
+                    await launch(
+                      url,
+                      forceSafariVC: false,
+                    );
+                  },
+              ),
+              TextSpan(
+                style: bodyTextStyle,
+                text: 'Github repository and create a pull request with your changes.',
+              ),
+            ],
+          ),
         ),
       ),
       // Wrap(
@@ -61,7 +65,7 @@ class InfoDialog extends StatelessWidget {
       //     Text('Github repository and make a pull request'),
       //   ],
       // ),
-
+    
       actions: [
         ElevatedButton(
           onPressed: () => Navigator.of(context).pop(),
