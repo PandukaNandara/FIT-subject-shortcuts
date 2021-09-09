@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:fit_shortcuts/components/subject_tile.dart';
 import 'package:fit_shortcuts/config/it_modules.dart';
+import 'package:fit_shortcuts/config/yes_on_alert.dart';
 import 'package:fit_shortcuts/constants/constants.dart';
 import 'package:fit_shortcuts/constants/shared_preferences_constants.dart';
 import 'package:fit_shortcuts/dialog/info_dialog.dart';
@@ -124,23 +125,36 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   _onPressArchived(bool isArchived, Subject subject) async {
-    final sharedPreferences = await SharedPreferences.getInstance();
-    final hiddenSubject = sharedPreferences
-            .getStringList(SharedPreferencesConstants.hiddenSubject) ??
-        [];
-    setState(() {
-      hiddenSubject.add(subject.code);
-      sharedPreferences.setStringList(
-          SharedPreferencesConstants.hiddenSubject, hiddenSubject);
-      final ordered = sharedPreferences.getStringList(
-        SharedPreferencesConstants.orderedSubjects(semCode),
-      );
-      ordered!.removeWhere((element) => element == subject.code);
-      sharedPreferences.setStringList(
-          SharedPreferencesConstants.orderedSubjects(semCode), ordered);
-    });
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text('${subject.name} archived')));
+    final confirm = (await showDialog<bool>(
+          context: context,
+          builder: (context) {
+            return YesNoAlert(
+              title: 'Confirm',
+              message: 'Do you want to archive ${subject.name}?',
+              yesOnPressed: () => Navigator.pop(context, true),
+            );
+          },
+        )) ??
+        false;
+    if (confirm) {
+      final sharedPreferences = await SharedPreferences.getInstance();
+      final hiddenSubject = sharedPreferences
+              .getStringList(SharedPreferencesConstants.hiddenSubject) ??
+          [];
+      setState(() {
+        hiddenSubject.add(subject.code);
+        sharedPreferences.setStringList(
+            SharedPreferencesConstants.hiddenSubject, hiddenSubject);
+        final ordered = sharedPreferences.getStringList(
+          SharedPreferencesConstants.orderedSubjects(semCode),
+        );
+        ordered!.removeWhere((element) => element == subject.code);
+        sharedPreferences.setStringList(
+            SharedPreferencesConstants.orderedSubjects(semCode), ordered);
+      });
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('${subject.name} archived')));
+    }
   }
 
   void _onPressedInfo() {
