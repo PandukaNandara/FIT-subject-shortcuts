@@ -16,7 +16,6 @@ class InfoDialog extends StatelessWidget {
       content: Container(
         constraints: BoxConstraints(maxWidth: 300.0),
         child: RichText(
-          
           text: TextSpan(
             children: [
               TextSpan(
@@ -41,8 +40,13 @@ class InfoDialog extends StatelessWidget {
               ),
               TextSpan(
                 style: bodyTextStyle,
-                text: 'Github repository and create a pull request with your changes.',
+                text:
+                    'Github repository and create a pull request with your changes. ',
               ),
+              TextSpan(
+                style: bodyTextStyle,
+                text: 'Note: This site uses browser cookies to save configuration details. So if you use another browser to access the site, you will have to set them up again.'
+              )
             ],
           ),
         ),
@@ -65,7 +69,7 @@ class InfoDialog extends StatelessWidget {
       //     Text('Github repository and make a pull request'),
       //   ],
       // ),
-    
+
       actions: [
         ElevatedButton(
           onPressed: () => Navigator.of(context).pop(),

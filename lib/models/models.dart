@@ -7,7 +7,7 @@ class ConfigModule {
   @JsonKey(name: '3')
   final Level three;
 
-  ConfigModule(this.three);
+  const ConfigModule(this.three);
 
   factory ConfigModule.fromJson(Map<String, dynamic> json) =>
       _$ConfigModuleFromJson(json);
@@ -34,7 +34,7 @@ class Level {
   @JsonKey(name: '2')
   final List<Subject>? two;
 
-  Level(this.one, this.two);
+  const Level(this.one, this.two);
 
   factory Level.fromJson(Map<String, dynamic> json) => _$LevelFromJson(json);
   Map<String, dynamic> toJson() => _$LevelToJson(this);
@@ -46,7 +46,7 @@ class Subject {
   final String name;
   final String url;
   final SubjectMode mode;
-  const Subject(this.code, this.name, this.url, this.mode);
+  const Subject(this.code, this.mode, this.name, this.url);
 
   factory Subject.fromJson(Map<String, dynamic> json) =>
       _$SubjectFromJson(json);

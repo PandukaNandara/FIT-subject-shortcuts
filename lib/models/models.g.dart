@@ -36,9 +36,9 @@ Map<String, dynamic> _$LevelToJson(Level instance) => <String, dynamic>{
 Subject _$SubjectFromJson(Map<String, dynamic> json) {
   return Subject(
     json['code'] as String,
+    _$enumDecode(_$SubjectModeEnumMap, json['mode']),
     json['name'] as String,
     json['url'] as String,
-    _$enumDecode(_$SubjectModeEnumMap, json['mode']),
   );
 }
 
