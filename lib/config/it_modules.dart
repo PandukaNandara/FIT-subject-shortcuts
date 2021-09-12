@@ -103,4 +103,16 @@ const kItModules = ConfigModule(const Level(const [
     "Independent Study",
     "https://moodle.itfac.uom.lk/course/view.php?id=1986",
   ),
+  Subject(
+    "IS 3910",
+    SubjectMode.C,
+    "Independent Study (ITM)",
+    "https://moodle.itfac.uom.lk/course/view.php?id=1977",
+  ),
+  Subject(
+    "IS 4420",
+    SubjectMode.E,
+    "Decision Management",
+    "https://moodle.itfac.uom.lk/course/view.php?id=1981",
+  ),
 ], null));
