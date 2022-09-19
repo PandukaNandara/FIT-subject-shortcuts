@@ -125,17 +125,18 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   _onPressArchived(bool isArchived, Subject subject) async {
-    final confirm = (await showDialog<bool>(
-          context: context,
-          builder: (context) {
-            return YesNoAlert(
-              title: 'Confirm',
-              message: 'Do you want to archive ${subject.name}?',
-              yesOnPressed: () => Navigator.pop(context, true),
-            );
-          },
-        )) ??
-        false;
+//     final confirm = (await showDialog<bool>(
+//           context: context,
+//           builder: (context) {
+//             return YesNoAlert(
+//               title: 'Confirm',
+//               message: 'Do you want to archive ${subject.name}?',
+//               yesOnPressed: () => Navigator.pop(context, true),
+//             );
+//           },
+//         )) ??
+//         false;
+    final confirm = true;
     if (confirm) {
       final sharedPreferences = await SharedPreferences.getInstance();
       final hiddenSubject = sharedPreferences
